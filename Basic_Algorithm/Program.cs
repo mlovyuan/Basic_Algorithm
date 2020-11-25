@@ -27,12 +27,30 @@ namespace Basic_Algorithm
                         array[j] = temp;
                     }
                 }
+                array.Print();
             }
-            array.Print();
+            //array.Print();
         }
 
         // 選擇排序法，是泡泡排序法的進階，取代了泡泡排序法多餘的交換動作。
-
+        public static void SelectionSort(this int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int minValueIndex = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[minValueIndex])
+                    {
+                        minValueIndex = j;
+                    }
+                }
+                int temp = array[minValueIndex];
+                array[minValueIndex] = array[i];
+                array[i] = temp;
+            }
+            array.Print();
+        }
 
 
         private static void Print(this Array values)

@@ -52,6 +52,32 @@ namespace Basic_Algorithm
             array.Print();
         }
 
+        // 插入排序法
+        public static void InsertionSort(this int[] array)
+        {
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                int iIndex = i;
+                int iValue = array[i];
+                if(iIndex > 0 && array[iIndex - 1] > iValue)
+                {
+                    array[iIndex] = array[iIndex - 1];
+                    iIndex--;
+                }
+                array[iIndex] = iValue;
+            }
+            array.Print();
+        }
+
+        // 希爾排序法
+        public static void ShellSort(this int[] array)
+        {
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                //....
+            }
+            array.Print();
+        }
 
         private static void Print(this Array values)
         {
